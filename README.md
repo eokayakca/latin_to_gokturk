@@ -18,7 +18,15 @@ Latin alfabesiyle yazılmış Türkçe metinleri Göktürk (Orhun) alfabesine ç
 
 ### Kurulum
 
+**GitHub üzerinden:**
 ```bash
+pip install git+https://github.com/eokayakca/latin_to_gokturk.git
+```
+
+**Yerel olarak:**
+```bash
+git clone https://github.com/eokayakca/latin_to_gokturk.git
+cd latin_to_gokturk
 pip install .
 ```
 
@@ -54,7 +62,15 @@ A Python library to convert Turkish text from Latin alphabet to Göktürk (Orkho
 
 ### Installation
 
+**From GitHub:**
 ```bash
+pip install git+https://github.com/eokayakca/latin_to_gokturk.git
+```
+
+**Locally:**
+```bash
+git clone https://github.com/eokayakca/latin_to_gokturk.git
+cd latin_to_gokturk
 pip install .
 ```
 
