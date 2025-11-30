@@ -9,6 +9,9 @@
 
 Latin alfabesiyle yazılmış Türkçe metinleri Göktürk (Orhun) alfabesine çeviren bir Python kütüphanesi.
 
+> [!WARNING]
+> Bu proje hobi ve eğitim amaçlı hazırlanmıştır. Akademik veya profesyonel çalışmalar için %100 doğruluk garanti edilmez ve yeterince test edilmemiştir.
+
 ### Özellikler
 
 - **Ünlü Uyumu**: Kalın ve ince ünlüleri ve bunlara bağlı ünsüz değişimlerini (örneğin kalın 'k' 𐰴, ince 'k' 𐰚) otomatik algılar.
@@ -52,6 +55,9 @@ MIT
 ## 🇬🇧 English
 
 A Python library to convert Turkish text from Latin alphabet to Göktürk (Orkhon) script.
+
+> [!WARNING]
+> This project is created for hobby and educational purposes. It is not guaranteed to be 100% accurate for academic or professional use and has not been extensively tested.
 
 ### Features
 
