@@ -45,12 +45,10 @@ class TestDetailedConverter(unittest.TestCase):
         self.assertIn('𐰭', res)
 
     def test_punctuation_handling(self):
+        # "Merhaba, Dünya." -> "𐰢𐰜𐰼𐰴𐰀𐰉𐰀, 𐰓𐰇𐰪𐰀." (Punctuation preserved)
         res = self.converter.convert("Merhaba, Dünya.")
-        # Should be "Merhaba : Dünya" (dots removed, comma -> :)
-        print(f"Merhaba, Dünya. -> {res}")
-        self.assertNotIn('.', res)
-        self.assertNotIn(',', res)
-        self.assertIn(':', res)
+        self.assertIn('.', res)
+        self.assertIn(',', res)
 
 if __name__ == '__main__':
     unittest.main()

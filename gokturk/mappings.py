@@ -2,7 +2,7 @@
 
 # Vowels
 VOWELS = {
-    'a': '𐰀', 'e': '𐰜',
+    'a': '𐰀', 'e': '𐰀',
     'ı': '𐰃', 'i': '𐰃',
     'o': '𐰆', 'u': '𐰆',
     'ö': '𐰇', 'ü': '𐰇',
@@ -84,13 +84,8 @@ CONSONANTS_NEUTRAL = {
 }
 
 # Punctuation
+# Punctuation
+# We preserve punctuation by default now, so this can be empty or contain specific Göktürk punctuation if needed.
 PUNCTUATION = {
-    '.': '',  
-    ',': '',
-    ';': '',
-    '!': '',
-    '?': '',
-    '-': '',
-    "'": '',
     '\n': '\n',
 }

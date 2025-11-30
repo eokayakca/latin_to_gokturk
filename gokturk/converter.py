@@ -5,7 +5,7 @@ class LatinToGokturkConverter:
     def __init__(self):
         pass
 
-    def convert(self, text):
+    def convert(self, text, rtl=False):
         if not text:
             return ""
             
@@ -24,7 +24,42 @@ class LatinToGokturkConverter:
                 # It's a word, convert it
                 converted_tokens.append(self.convert_word(token))
             
-        return "".join(converted_tokens)
+        result = "".join(converted_tokens)
+        
+        if rtl:
+            # Smart RTL: Reverse only Göktürk runs, keep numbers/Latin LTR, but reverse the visual order of blocks.
+            lines = result.split('\n')
+            reversed_lines = [self._smart_reverse(line) for line in lines]
+            return '\n'.join(reversed_lines)
+            
+        return result
+
+    def _smart_reverse(self, text):
+        import re
+        # Regex for Old Turkic characters (U+10C00-U+10C4F) OR Digits
+        # We split by these to ensure numbers are treated as separate chunks from punctuation
+        # But we only want to REVERSE the Old Turkic characters.
+        split_pattern = r'([\U00010C00-\U00010C4F]+|\d+)'
+        parts = re.split(split_pattern, text)
+        
+        # Reverse the order of chunks to simulate RTL flow
+        parts.reverse()
+        
+        processed_parts = []
+        gokturk_pattern = r'[\U00010C00-\U00010C4F]+'
+        
+        for part in parts:
+            if not part:
+                continue
+                
+            if re.match(gokturk_pattern, part):
+                # It's Göktürk: Reverse the characters
+                processed_parts.append(part[::-1])
+            else:
+                # It's Latin/Numbers/Symbols: Keep as is (LTR)
+                processed_parts.append(part)
+                
+        return "".join(processed_parts)
 
     def convert_word(self, word):
         result = []
